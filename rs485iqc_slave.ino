@@ -8,7 +8,7 @@ void setup() {
 
   pinMode(8, OUTPUT);
   digitalWrite(8, RS485Receive); //DE,RE=LOW, RX enabled
-  Serial.begin (115200);   // TO MAX485
+  Serial.begin (1000000);   // TO MAX485
 }
 
 void loop() {
@@ -58,7 +58,7 @@ void sendFeedback(byte rH)
   Serial.write(sA); 
   Serial.write(sH); 
   Serial.write(sP);
-  delayMicroseconds(300);
+  delayMicroseconds(10);
   
   digitalWrite(8, RS485Receive); //DE,RE=LOW, RX enabled
 }
